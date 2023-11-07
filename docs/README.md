@@ -77,7 +77,7 @@
   - [ ] 구입한 로또를 출력한다. -> LottoOutputView.printLottoList
 
 - [ ] checkLottoPrize /  당첨금을 확인한다.
-  - [ ] 당첨 번호를 입력 받는다.  -> LottoInputView.inputLottoWinningNumers
+  - [ ] 당첨 번호를 입력 받는다.  -> LottoInputView.inputLottoWinningNumbers
   - [ ] 로또 결과를 계산한다. -> LottoMachine.checkLotto
   - [ ] 로또 결과를 출력한다. -> LottoOutputView.printLottoResult
 
@@ -88,10 +88,10 @@
   - [ ] 사용자로부터 정수를 입력 받는다. -> InputView.inputNum
   - [ ] 입력 받은 값을 로또 구입 금액에 맞게 변환한다. -> LottoPurchaseParser.parseInt
   - [ ] 입력 받은 값으로 구입 금액을 생성한다. ->  LottoPurchase
-- [ ] inputLottoWinningNumers / 당첨 번호를 입력받는다.
+- [ ] inputLottoWinningNumbers / 당첨 번호를 입력받는다.
   - [ ] 사용자로부터 정수를 입력 받는다. -> InputView.inputNum
-  - [ ] 입력 받은 값을 당첨 번호에 맞게 변환한다. -> LottoWinningNumersParser.parseNumList
-  - [ ] 입력 받은 값으로 당첨 번호를 생성한다. ->  LottoWinningNumers
+  - [ ] 입력 받은 값을 당첨 번호에 맞게 변환한다. -> LottoWinningNumbersParser.parseNumList
+  - [ ] 입력 받은 값으로 당첨 번호를 생성한다. ->  LottoWinningNumbers
 
 
 ### InputView
@@ -126,32 +126,32 @@
 ### LottoPurchaseParser
 - [ ] parseInt / 입력 받은 값을 로또 구입 금액으로 변환한다.
   - [ ] 아무 기능을 하지 않는다. -> 추후 유지 보수를 위해
-### LottoWinningNumersParser
+### LottoWinningNumbersParser
 - [ ] parseNumList / 입력 받은 값을 당첨 번호로 변환한다.
   - [ ] 문자열을 쉼표(,)를 기준으로 구분한다.
   - [ ] 입력받은 번호를 정수로 변환한다.
 
 ## Validator
 ### LottoPurchaseValidator
-- [ ] validLottoPurchase / 금액이 정상 금액인지 확인한다.
-  - [ ] 음수가 아닌지 확인한다.
-  - [ ] 1000원 단위로 나눠지는지 확인한다.
-### LottoWinningNumersValidator
-- [ ] validJackpotNumbers / 당첨 번호가 정상인지 확인한다.
-  - [ ] 당첨 번호가 1~45 사이의 값인지 확인한다.
-  - [ ] 당첨 번호가 중복되지 않은 숫자인지 확인한다.
-- [ ] validBonustNumber / 보너스 번호가 정상인지 확인한다.
-  - [ ] 보너스 번호가 1~45 사이의 값인지 확인한다.
-  - [ ] 보너스 번호가 당첨 번호와 중복인지 확인한다.
+- [x] validLottoPurchase / 금액이 정상 금액인지 확인한다.
+  - [x] 음수가 아닌지 확인한다.
+  - [x] 1000원 단위로 나눠지는지 확인한다.
+### LottoWinningNumbersValidator
+- [x] validJackpotNumbers / 당첨 번호가 정상인지 확인한다.
+  - [x] 당첨 번호가 1~45 사이의 값인지 확인한다.
+  - [x] 당첨 번호가 중복되지 않은 숫자인지 확인한다.
+- [x] validBonustNumber / 보너스 번호가 정상인지 확인한다.
+  - [x] 보너스 번호가 1~45 사이의 값인지 확인한다.
+  - [x] 보너스 번호가 당첨 번호와 중복인지 확인한다.
 ## Model
 
 ### LottoPurchase
 - [x] amount init 돈을 생성한다.
   - [x] 금액이 정상 금액인지 확인한다. -> LottoPurchaseValidator.validLottoPurchase
-### LottoWinningNumers
+### LottoWinningNumbers
 - [ ] init 당첨 번호를 생성한다.
-  - [ ] 당첨 번호가 정상인지 확인한다. -> LottoWinningNumersValidator.validJackpotNumbers
-  - [ ] 보너스 번호가 정상인지 확인한다. -> LottoWinningNumersValidator.validBonustNumber
+  - [ ] 당첨 번호가 정상인지 확인한다. -> LottoWinningNumbersValidator.validJackpotNumbers
+  - [ ] 보너스 번호가 정상인지 확인한다. -> LottoWinningNumbersValidator.validBonustNumber
 ### LottoMachine
 - [x] buyLotto / 입력 받은 금액 만큼 로또를 발급한다.
   - [x] 입력 받은 금액을 통해 발급할 로또 개수를 정한다.

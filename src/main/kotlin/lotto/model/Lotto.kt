@@ -19,8 +19,8 @@ class Lotto(private val numbers: List<Int>) {
 
     companion object {
         const val PRICE = 1000
-        private const val MIN_NUM = 1
-        private const val MAX_NUM = 45
+        const val MIN_NUM = 1
+        const val MAX_NUM = 45
         const val NUMBER_SIZE = 6
         fun createRandom(): Lotto {
             val numbers = Randoms.pickUniqueNumbersInRange(MIN_NUM, MAX_NUM, NUMBER_SIZE)
