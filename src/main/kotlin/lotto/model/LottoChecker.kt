@@ -3,15 +3,12 @@ package lotto.model
 import lotto.constant.LottoPrizes
 
 class LottoChecker(private val jackpotNumbers: List<Int>, private val bonusNum: Int) {
-    fun checkLottoList(lottoList: List<Lotto>): Map<LottoPrizes, Int> {
+    fun checkLottoList(lottoList: List<Lotto>): LottoResult {
         val prizeList = lottoList.map { lotto: Lotto ->
             checkLottoOne(lotto.getNumbers())
         }
         val prizeCounts = prizeList.groupingBy { it }.eachCount()
-        println(prizeList)
-        println(prizeCounts)
-        println(LottoPrizes.entries.associateWith { prizeCounts.getOrDefault(it, 0) })
-        return LottoPrizes.entries.associateWith { prizeCounts.getOrDefault(it, 0) }
+        return LottoResult(prizeCounts = prizeCounts)
 
     }
 
