@@ -116,7 +116,7 @@
 ### ParserError
 - [ ] 파싱 에러 메세지
 
-### VaildatorError
+### ValidatorError
 - [ ] 검증 에러 메세지
 
 ### LottoPrizes
@@ -131,35 +131,35 @@
   - [ ] 문자열을 쉼표(,)를 기준으로 구분한다.
   - [ ] 입력받은 번호를 정수로 변환한다.
 
-## Vaildator
-### LottoPurchaseVaildator
-- [ ] vaildLottoPurchase / 금액이 정상 금액인지 확인한다.
+## Validator
+### LottoPurchaseValidator
+- [ ] validLottoPurchase / 금액이 정상 금액인지 확인한다.
   - [ ] 음수가 아닌지 확인한다.
   - [ ] 1000원 단위로 나눠지는지 확인한다.
-### LottoWinningNumersVaildator
-- [ ] vaildJackpotNumbers / 당첨 번호가 정상인지 확인한다.
+### LottoWinningNumersValidator
+- [ ] validJackpotNumbers / 당첨 번호가 정상인지 확인한다.
   - [ ] 당첨 번호가 1~45 사이의 값인지 확인한다.
   - [ ] 당첨 번호가 중복되지 않은 숫자인지 확인한다.
-- [ ] vaildBonustNumber / 보너스 번호가 정상인지 확인한다.
+- [ ] validBonustNumber / 보너스 번호가 정상인지 확인한다.
   - [ ] 보너스 번호가 1~45 사이의 값인지 확인한다.
   - [ ] 보너스 번호가 당첨 번호와 중복인지 확인한다.
 ## Model
 
 ### LottoPurchase
 - [x] amount init 돈을 생성한다.
-  - [x] 금액이 정상 금액인지 확인한다. -> LottoPurchaseVaildator.vaildLottoPurchase
+  - [x] 금액이 정상 금액인지 확인한다. -> LottoPurchaseValidator.validLottoPurchase
 ### LottoWinningNumers
 - [ ] init 당첨 번호를 생성한다.
-  - [ ] 당첨 번호가 정상인지 확인한다. -> LottoWinningNumersVaildator.vaildJackpotNumbers
-  - [ ] 보너스 번호가 정상인지 확인한다. -> LottoWinningNumersVaildator.vaildBonustNumber
+  - [ ] 당첨 번호가 정상인지 확인한다. -> LottoWinningNumersValidator.validJackpotNumbers
+  - [ ] 보너스 번호가 정상인지 확인한다. -> LottoWinningNumersValidator.validBonustNumber
 ### LottoMachine
-- [ ] buyLotto / 입력 받은 금액 만큼 로또를 발급한다.
-  - [ ] 입력 받은 금액을 통해 발급할 로또 개수를 정한다.
-  - [ ]  makeLotto / 로또를 1개 발급한다. -> this
-  - [ ] 생성한 로또들을 반환한다.
-- [ ] issueLotto / 로또를 1개 발급한다.
-  - [ ] 랜덤 한 로또를 생성한다. -> Lotto.createRandom
-  - [ ] 생성한 로또를 반환한다.
+- [x] buyLotto / 입력 받은 금액 만큼 로또를 발급한다.
+  - [x] 입력 받은 금액을 통해 발급할 로또 개수를 정한다.
+  - [x]  로또를 1개 발급한다. -> this.makeLotto
+  - [x] 생성한 로또들을 반환한다.
+- [x] issueLotto / 로또를 1개 발급한다.
+  - [x] 랜덤 한 로또를 생성한다. -> Lotto.createRandom
+  - [x] 생성한 로또를 반환한다.
 ### LottoChecker
 - [x] checkLotto / 로또 당첨금 확인
   - [x] 입력받은 당첨 번호와 로또 번호를 비교해서 한다.
@@ -174,5 +174,7 @@
   - [x] 랜덤으로 1~45까지 중복되지 않는 숫자 6개를 선정한다.
 - [x] getNumbers / 로또 번호를 출력한다.
   - [x] 오름차순으로 정렬한다.
+
+
 
 

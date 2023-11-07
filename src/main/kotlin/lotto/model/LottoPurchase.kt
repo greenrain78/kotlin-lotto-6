@@ -1,11 +1,11 @@
 package lotto.model
 
 import lotto.constant.LottoValidatorError
+import lotto.validator.LottoPurchaseValidator
 
 data class LottoPurchase(val amount: Int) {
     init {
-        require(amount % Lotto.PRICE == 0) {
-            LottoValidatorError.INVALID_LOTTO_PURCHASE_AMOUNT.text.format(Lotto.PRICE)
-        }
+        LottoPurchaseValidator.validPositiveInt(amount = amount)
+        LottoPurchaseValidator.validInvalidAmount(amount = amount)
     }
 }
