@@ -72,7 +72,7 @@
 
 ### Controller
 - [ ] buyLotto / 로또를 구매한다.
-  - [ ] 로또 구입 금액을 입력 받는다. -> LottoInputView.inputMoney
+  - [ ] 로또 구입 금액을 입력 받는다. -> LottoInputView.inputLottoPurchase
   - [ ] 로또를 발급하다. -> LottoMachine.buyLotto
   - [ ] 구입한 로또를 출력한다. -> LottoOutputView.printLottoList
 
@@ -84,10 +84,10 @@
 ## View
 
 ### LottoInputView
-- [ ] inputMoney / 로또 번호를 입력 받는다.
+- [ ] inputLottoPurchase / 로또 번호를 입력 받는다.
   - [ ] 사용자로부터 정수를 입력 받는다. -> InputView.inputNum
-  - [ ] 입력 받은 값을 로또 구입 금액에 맞게 변환한다. -> MoneyParser.parseInt
-  - [ ] 입력 받은 값으로 구입 금액을 생성한다. ->  Money
+  - [ ] 입력 받은 값을 로또 구입 금액에 맞게 변환한다. -> LottoPurchaseParser.parseInt
+  - [ ] 입력 받은 값으로 구입 금액을 생성한다. ->  LottoPurchase
 - [ ] inputLottoWinningNumers / 당첨 번호를 입력받는다.
   - [ ] 사용자로부터 정수를 입력 받는다. -> InputView.inputNum
   - [ ] 입력 받은 값을 당첨 번호에 맞게 변환한다. -> LottoWinningNumersParser.parseNumList
@@ -123,7 +123,7 @@
 - [x] 로또 가격 관리
 
 ## Parser
-### MoneyParser
+### LottoPurchaseParser
 - [ ] parseInt / 입력 받은 값을 로또 구입 금액으로 변환한다.
   - [ ] 아무 기능을 하지 않는다. -> 추후 유지 보수를 위해
 ### LottoWinningNumersParser
@@ -132,8 +132,8 @@
   - [ ] 입력받은 번호를 정수로 변환한다.
 
 ## Vaildator
-### MoneyVaildator
-- [ ] vaildMoney / 금액이 정상 금액인지 확인한다.
+### LottoPurchaseVaildator
+- [ ] vaildLottoPurchase / 금액이 정상 금액인지 확인한다.
   - [ ] 음수가 아닌지 확인한다.
   - [ ] 1000원 단위로 나눠지는지 확인한다.
 ### LottoWinningNumersVaildator
@@ -145,9 +145,9 @@
   - [ ] 보너스 번호가 당첨 번호와 중복인지 확인한다.
 ## Model
 
-### Money
-- [ ] init 돈을 생성한다.
-  - [ ] 금액이 정상 금액인지 확인한다. -> MoneyVaildator.vaildMoney
+### LottoPurchase
+- [x] amount init 돈을 생성한다.
+  - [x] 금액이 정상 금액인지 확인한다. -> LottoPurchaseVaildator.vaildLottoPurchase
 ### LottoWinningNumers
 - [ ] init 당첨 번호를 생성한다.
   - [ ] 당첨 번호가 정상인지 확인한다. -> LottoWinningNumersVaildator.vaildJackpotNumbers
