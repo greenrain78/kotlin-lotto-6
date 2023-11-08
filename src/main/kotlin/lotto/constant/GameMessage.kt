@@ -8,9 +8,9 @@ enum class GameMessage(val message: String) {
     BONUS_NUMBER_INPUT_GUIDE("보너스 번호를 입력해 주세요.");
 
     enum class LottoResult(val message: String) {
-        HEADER("당첨 통계\\n---"),
-        DEFAULT_FORMAT("%d개 일치 (%d원) - %d개"),
-        BONUS_FORMAT("%d개 일치, 보너스 볼 일치 (%d원) - %d개"),
+        HEADER("당첨 통계\n---"),
+        DEFAULT_FORMAT("%d개 일치 (%s원) - %d개"),
+        BONUS_FORMAT("%d개 일치, 보너스 볼 일치 (%s원) - %d개"),
         PROFIT_FORMAT("총 수익률은 %.2f%%입니다."),
     }
 }
