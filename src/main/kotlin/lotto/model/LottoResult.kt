@@ -6,7 +6,7 @@ class LottoResult(prizeCounts: Map<LottoPrizes, Int>) {
     private val prizeCountMap: Map<LottoPrizes, Int>
 
     init {
-        prizeCountMap = LottoPrizes.entries.associateWith { prizeCounts.getOrDefault(it, 0) }
+        prizeCountMap = LottoPrizes.entries.reversed().associateWith { prizeCounts.getOrDefault(it, 0) }
     }
 
     fun getLottoProfit(): Double {
