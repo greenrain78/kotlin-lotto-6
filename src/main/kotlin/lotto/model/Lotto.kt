@@ -1,10 +1,12 @@
 package lotto.model
 
 import camp.nextstep.edu.missionutils.Randoms
+import lotto.constant.LottoValidatorError
 
 class Lotto(private val numbers: List<Int>) {
     init {
         require(numbers.size == NUMBER_SIZE)
+        require(numbers.size == numbers.distinct().size) { LottoValidatorError.NUMBER_DUPLICATE.message }
     }
 
     internal fun getNumbers(): List<Int> = numbers
