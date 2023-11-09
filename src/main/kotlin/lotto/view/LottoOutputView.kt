@@ -26,11 +26,11 @@ class LottoOutputView {
         var prizeCountMap = lottoResult.getPrizeCountMap()
         prizeCountMap = prizeCountMap.filterKeys { it != LottoPrizes.NONE_PRIZE }
         prizeCountMap.forEach { (prize, count) ->
-            outputView.printMessage(
-                GameMessage.LottoResult.DEFAULT_FORMAT.message.format(
-                    0, String.format("%,d", prize.value), count
-                )
-            )
+            val message = when (prize.isBonus) {
+                true -> GameMessage.LottoResult.BONUS_FORMAT.message
+                false -> GameMessage.LottoResult.DEFAULT_FORMAT.message
+            }.format(prize.count, String.format("%,d", prize.value), count)
+            outputView.printMessage(message)
         }
         outputView.printMessage(GameMessage.LottoResult.PROFIT_FORMAT.message.format(lottoResult.getLottoProfit()))
     }

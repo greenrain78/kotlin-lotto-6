@@ -1,10 +1,10 @@
 package lotto.constant
 
-enum class LottoPrizes(val value: Int) {
-    FIRST_PRIZE(2000000000),
-    SECOND_PRIZE(30000000),
-    THIRD_PRIZE(1500000),
-    FOURTH_PRIZE(50000),
-    FIFTH_PRIZE(5000),
-    NONE_PRIZE(0),
+enum class LottoPrizes(val value: Int, val count: Int = -1, val isBonus: Boolean = false) {
+    FIRST_PRIZE(value = 2000000000, count = 6),
+    SECOND_PRIZE(value = 30000000, count = 5, isBonus = true),
+    THIRD_PRIZE(value = 1500000, count = 5),
+    FOURTH_PRIZE(value = 50000, count = 4),
+    FIFTH_PRIZE(value = 5000, count = 3),
+    NONE_PRIZE(value = 0),
 }

@@ -15,14 +15,14 @@ class LottoChecker(private val jackpotNumbers: List<Int>, private val bonusNum: 
     private fun checkLottoOne(lottoNumbers: List<Int>): LottoPrizes {
         val correctCount = lottoNumbers.intersect(jackpotNumbers.toSet()).size
         return when (correctCount) {
-            6 -> LottoPrizes.FIRST_PRIZE
-            5 -> when (lottoNumbers.contains(bonusNum)) {
+            LottoPrizes.FIRST_PRIZE.count -> LottoPrizes.FIRST_PRIZE
+            LottoPrizes.SECOND_PRIZE.count -> when (lottoNumbers.contains(bonusNum)) {
                 true -> LottoPrizes.SECOND_PRIZE
                 false -> LottoPrizes.THIRD_PRIZE
             }
 
-            4 -> LottoPrizes.FOURTH_PRIZE
-            3 -> LottoPrizes.FIFTH_PRIZE
+            LottoPrizes.FOURTH_PRIZE.count -> LottoPrizes.FOURTH_PRIZE
+            LottoPrizes.FIFTH_PRIZE.count -> LottoPrizes.FIFTH_PRIZE
             else -> LottoPrizes.NONE_PRIZE
         }
 
