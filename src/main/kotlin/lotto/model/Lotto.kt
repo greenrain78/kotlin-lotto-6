@@ -28,9 +28,5 @@ class Lotto(private val numbers: List<Int>) {
             val numbers = Randoms.pickUniqueNumbersInRange(MIN_NUM, MAX_NUM, NUMBER_SIZE)
             return Lotto(numbers)
         }
-
-        fun createNumList(numList: List<Int>): Lotto {
-            return Lotto(numList)
-        }
     }
 }
